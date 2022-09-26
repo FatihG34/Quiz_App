@@ -1,16 +1,14 @@
 from rest_framework import serializers
-from rest_framework.serializers import ModelSerializer
-
 from QuizApp.models import Category, Quiz
 
 
-class CategorySerializer(ModelSerializer):
+class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ["id", "name"]
+        fields = ["id","name"]
 
 
-class QuizSerializer(ModelSerializer):
+class QuizSerializer(serializers.ModelSerializer):
     category = serializers.StringRelatedField()
     category_id = serializers.IntegerField()
 
