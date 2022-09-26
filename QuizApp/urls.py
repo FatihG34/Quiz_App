@@ -1,6 +1,6 @@
 from django.urls import path
 
-from QuizApp.views import CategoryListView, home, QuizListView, CategoryDetailView, QuizDetailView
+from QuizApp.views import CategoryListView, QuestinListView, home, QuizListView, CategoryDetailView, QuizDetailView
 
 
 
@@ -10,4 +10,5 @@ urlpatterns = [
     path("category/<int:pk>", CategoryDetailView.as_view(), name="category-detail"),
     path("quiz/", QuizListView.as_view(), name="quiz"),
     path("quiz/<int:pk>", QuizDetailView.as_view(), name="quiz-detail"),
+    path("questions/", QuestinListView.as_view(), name="questions"),
 ]
